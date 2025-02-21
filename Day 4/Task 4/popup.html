@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background: #ff9800;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #e68900;
+        }
+
+        #sotta {
+            display: none;
+            width: 350px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggle()">Show Content</button>
+
+    <div id="sotta">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quis nulla qui, voluptates ex vel at odit fugit accusantium aliquid.</p>
+        <button onclick="pop()">Hide Content</button>
+    </div>
+
+    <script>
+        var cont = document.getElementById("sotta");
+
+        function toggle() {
+            cont.style.display = "block";
+        }
+
+        function pop() {
+            cont.style.display = "none";
+        }
+    </script>
+</body>
+</html>

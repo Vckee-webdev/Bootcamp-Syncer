@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: auto;
+        }
+
+        .slider {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Simple Image Slider</h2>
+
+    <div class="slider-container">
+        <button class="button prev" onclick="prevImage()">&#10094;</button>
+        <img id="slider" class="slider" src="img1.jpg" alt="Slider Image">
+        <button class="button next" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <script>
+        let images = [
+            "img1.jpg",
+            "img2.jpg",
+            "img3.jpg"
+        ];
+        let index = 0;
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("slider").src = images[index];
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("slider").src = images[index];
+        }
+    </script>
+
+</body>
+</html>

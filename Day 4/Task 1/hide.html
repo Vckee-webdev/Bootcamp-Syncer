@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            transition: 0.5s ease-in-out;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: white;
+            background: #ff9800;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #e68900;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="toggleText()">Show Message</button>
+    <p id="message">"Success is not final, failure is not fatal: it is the courage to continue that counts."</p>
+
+    <script>
+        function toggleText() {
+            let text = document.getElementById("message");
+            let button = document.querySelector("button");
+
+            if (text.style.display === "none" || text.style.display === "") {
+                text.style.display = "block";
+                button.innerText = "Hide Message";
+            } else {
+                text.style.display = "none";
+                button.innerText = "Show Message";
+            }
+        }
+    </script>
+
+</body>
+</html>
